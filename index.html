@@ -1,82 +1,378 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
+
+<!-- Declares HTML5 document -->
 <html lang="en">
+
 <head>
+
+    <!-- Character encoding for symbols/emojis -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>MONSTER MAYHEM | Golden Treasure Hunt</title>
+
+    <!-- Browser tab title -->
+    <title>Monster Mayhem - Classic</title>
+
+    <!-- Links external CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-<div class="game-container">
-    <div class="golden-frame">
-        <div class="game-content">
+<!-- TOP NAV BAR -navigation bar -->
+<div class="top-nav fire-nav">
+    <!-- Navigation links container -->
+    <div class="nav-links">
+
+        <!-- Logout button -->
+        <a href="login.html">👤 Log out</a>
+        <!-- Current active game page -->
+        <a href="index.html" class="active">🎮 Classic Game</a>
+        <a href="challenge.html">⚡ Survival Mode</a>
+        <a href="shop.html">🪙 Shop </a>
+
+    </div>
+
+    <!-- Displays current username -->
+    <div class="user-info" id="userDisplay">
+     User
+
+    </div>
+
+</div>
+<!-- Main outer game container -->
+<div class="game-container fire-container">
+
+    <!-- Decorative golden frame -->
+    <div class="golden-frame fire-frame">
+
+        <!-- Main game content area -->
+        <div class="game-content fire-content">
+
+            <!-- Title , Game title section -->
             <div class="game-header">
-                <div class="game-title">👾 MONSTER MAYHEM</div>
-                <div class="game-subtitle">✦ THE GOLDEN TREASURE HUNT ✦</div>
-            </div>
 
+                <!-- Main title -->
+                <div class="game-title fire-title">🔥 MONSTER MAYHEM ⏱️</div>
+                <!-- Subtitle/game mode -->
+                <div class="game-subtitle fire-subtitle">
+                    Classic Game - 60 SECONDS
+                </div>
+
+            </div>
+            <!-- Statistics panel -->
             <div class="stats-panel">
-                <div class="stat-card">
-                    <div class="stat-label">💎 TREASURE</div>
-                    <div class="stat-value" id="treasureStatus">???</div>
+
+                <!-- Treasure status card -->
+                <div class="stat-card fire-card">
+
+                    <div class="stat-label">
+                        💎 TREASURE
+                    </div>
+
+                    <!-- Updated with JavaScript -->
+                    <div class="stat-value" id="treasureStatus">
+                        ❓ HIDDEN
+
+                    </div>
+
+                    <!-- Distance hint display -->
+                    <div class="hot-cold-mini" id="hotColdMini">
+                        📍 DISTANCE: ?
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">⚡ MOVES LEFT</div>
-                    <div class="stat-value" id="movesLeft">20</div>
+
+                <!-- Timer card -->
+                <div class="stat-card fire-card">
+
+                    <div class="stat-label">
+                        ⏱️ TIME LEFT
+                    </div>
+
+                    <!-- Countdown timer -->
+                    <div class="stat-value" id="timeLeftDisplay">
+                         60
+
+                    </div>
+
+                    <!-- Timer warning badge -->
+                    <div class="status-badge" id="timerBadge">
+                        ⚡ HURRY!
+
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-label">🗺️ EXPLORED</div>
-                    <div class="stat-value" id="exploredCount">0</div>
+
+                <!-- Explored hex count -->
+                <div class="stat-card fire-card">
+
+                    <div class="stat-label">
+                        🗺️ EXPLORED
+                    </div>
+
+                    <!-- Tracks explored tiles -->
+                    <div class="stat-value" id="exploredCount">
+                        0
+
+                    </div>
                 </div>
+
+            </div>
+            <!--STATUS AREA- Shows live game updates -->
+            <div class="status-area fire-status">
+
+                <!-- Main status message -->
+                <div class="status-message" id="gameStatus">
+                    🔥 TIMER RUNNING! Find the treasure!
+                </div>
+
+                <!-- Hot/cold hint text -->
+                <div class="hot-cold" id="hotColdHint">
+                    🌡️ DISTANCE: ?
+                </div>
+
             </div>
 
-            <div class="canvas-wrapper">
-                <canvas id="hexCanvas" width="900" height="700"></canvas>
+            <!-- Additional instructions -->
+            <div class="status-detail" id="statusDetail">
+
+                ⏱️ You have 60 seconds!
+                Click BRIGHT ORANGE hexes to move!
+                Find treasure before time runs out!
+
             </div>
 
-            <div class="status-area">
-                <div class="status-message" id="gameStatus">⚔️ READY FOR BATTLE</div>
-                <div class="status-detail" id="statusDetail">Click green hexes to move monster</div>
-                <div class="hot-cold" id="hotColdHint">🌸 DISTANCE: ?</div>
+            <!-- GAME AND SIDE PANEL -->
+            <!-- Layout containing canvas and side info -->
+            <div class="game-layout">
+
+                <!-- GAME CANVAS -->
+
+                <!-- Container for canvas -->
+                <div class="canvas-wrapper">
+
+                    <!-- Main game rendering area -->
+                    <canvas
+                        id="hexCanvas"
+                        width="850"
+                        height="650">
+                    </canvas>
+
+                </div>
+
+                <!-- SIDE PANEL -->
+
+                <!-- Information/help panel -->
+                <div class="side-panel fire-side">
+
+                    <!-- Side panel heading -->
+                    <h3>🔥 HOT / ❄️ COLD GUIDE</h3>
+
+                    <!-- Distance guide -->
+                    <div class="info-box fire-info">
+
+                        <strong>🔥 ON FIRE!</strong>
+
+                        <p>1-2 steps away</p>
+
+                    </div>
+
+                    <!-- Warm distance guide -->
+                    <div class="info-box fire-info">
+
+                        <strong>🟡 WARM</strong>
+
+                        <p>3-4 steps away</p>
+
+                    </div>
+
+                    <!-- Cool distance guide -->
+                    <div class="info-box fire-info">
+
+                        <strong>😐 COOL</strong>
+
+                        <p>5-6 steps away</p>
+
+                    </div>
+
+                    <!-- Cold distance guide -->
+                    <div class="info-box fire-info">
+
+                        <strong>❄️ COLD</strong>
+
+                        <p>7+ steps away</p>
+
+                    </div>
+
+                    <!-- Timer explanation -->
+                    <div class="info-box fire-info">
+
+                        <strong>⏱️ TIMER</strong>
+
+                        <p>60 seconds only!</p>
+
+                    </div>
+
+                    <!-- Move range explanation -->
+                    <div class="info-box fire-info">
+
+                        <strong>👾 MOVE RANGE</strong>
+
+                        <p>2 hex steps per turn</p>
+
+                    </div>
+
+                    <!-- Live distance tracker -->
+                    <div class="info-box fire-info live-feed">
+
+                        <strong>🌡️ LIVE DISTANCE</strong>
+
+                        <!-- Updated dynamically -->
+                        <div id="sideHotCold">
+
+                            ? steps away
+
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
+            <!-- BUTTONS -->
+
+            <!-- Control buttons area -->
             <div class="button-panel">
-                <button class="btn-gold" id="infoBtn">📜 GAME RULES</button>
-                <button class="btn-gold btn-dark" id="deselectBtn">★ DESELECT</button>
-                <button class="btn-gold btn-dark" id="resetBtn">🔄 RESET GAME</button>
+
+                <!-- Opens rules popup -->
+                <button class="btn-fire" id="infoBtn">
+
+                    📜 RULES
+
+                </button>
+
+                <!-- Removes selected tile -->
+                <button
+                    class="btn-fire btn-dark"
+                    id="deselectBtn">
+
+                    ⭐ DESELECT
+
+                </button>
+
+                <!-- Restarts game -->
+                <button
+                    class="btn-fire btn-dark"
+                    id="resetBtn">
+
+                    🔄 RESET GAME
+
+                </button>
             </div>
+
         </div>
+
     </div>
+
 </div>
 
-<!-- MODAL FOR RULES -->
+<!-- RULES MODAL -->
+
+<!-- Popup window for game rules -->
 <div id="infoModal" class="modal">
-    <div class="modal-content">
+
+    <!-- Modal content box -->
+    <div class="modal-content fire-modal">
+
+        <!-- Modal title -->
         <div class="modal-header">
-            👑 GOLDEN RULES 👑
+
+            🔥 TIMED CHALLENGE RULES 🔥
+
         </div>
+
+        <!-- Modal body -->
         <div class="modal-body">
-            <ul class="rules-list">
-                <li>🎯 <strong>FIND THE HIDDEN TREASURE</strong> - One golden chest is hidden somewhere on the map!</li>
-                <li>⚡ <strong>LIMITED MOVES: 20</strong> - Each move costs 1 move. Plan your path wisely!</li>
-                <li>🔥 <strong>HOT & COLD SYSTEM</strong> - Status message tells how close you are to treasure!</li>
-                <li>🟢 <strong>MOVE RANGE: 2 STEPS</strong> - Monster can jump up to 2 hexes away.</li>
-                <li>💀 <strong>GAME OVER</strong> - If moves reach 0 without treasure, you LOSE!</li>
-                <li>🏆 <strong>VICTORY</strong> - Land on treasure hex to win the game!</li>
-                <li>🗺️ <strong>EXPLORATION</strong> - Each new hex visited counts toward exploration.</li>
-                <li>✨ <strong>GOLDEN THEME</strong> - Premium high-class monster hunting experience.</li>
+
+            <!-- Rules list -->
+            <ul>
+
+                <!-- Time limit rule -->
+                <li>
+                    ⏱️
+                    <strong>60 SECOND TIME LIMIT</strong>
+
+                    - Find treasure before timer ends!
+                </li>
+
+                <!-- Treasure rule -->
+                <li>
+                    💎
+                    <strong>HIDDEN TREASURE</strong>
+
+                    - Invisible until you find it!
+                </li>
+
+                <!-- Hint system rule -->
+                <li>
+                    🔥
+                    <strong>HOT/COLD HINTS</strong>
+
+                    - Tells you how close you are!
+                </li>
+
+                <!-- Movement rule -->
+                <li>
+                    🟠
+                    <strong>ORANGE HEXES</strong>
+
+                    = Valid moves (2 step range)
+                </li>
+
+                <!-- Warning system rule -->
+                <li>
+                    ⚡
+                    <strong>TIMER WARNING</strong>
+
+                    - Red flash when 10 seconds left!
+                </li>
+
+                <!-- Win condition -->
+                <li>
+                    🏆
+                    <strong>WIN</strong>
+
+                    - Land on treasure before time expires!
+                </li>
+
+                <!-- Lose condition -->
+                <li>
+                    💀
+                    <strong>LOSE</strong>
+
+                    - Timer reaches 0 before finding treasure!
+                </li>
+
             </ul>
-            <div class="rules-footer">
-                "Fortune favors the bold monster hunter..."
-            </div>
+
         </div>
+
+        <!-- Modal footer -->
         <div class="modal-footer">
-            <button class="btn-gold modal-close-btn">I UNDERSTAND</button>
+
+            <!-- Closes popup -->
+            <button class="btn-fire" id="closeModalBtn">
+
+                GOT IT!
+
+            </button>
+
         </div>
+
     </div>
+
 </div>
 
+<!-- Links external JavaScript game logic -->
 <script src="script.js"></script>
+
 </body>
 </html>
