@@ -1,0 +1,295 @@
+
+/* RESET */
+/* Removes default browser spacing and ensures consistent layout sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+/* Sets overall page theme, background, font, and default text color */
+body {
+    min-height: 100vh;
+
+    /* Gold-themed layered background (radial glow + gradient) */
+    background:
+        radial-gradient(circle at top, rgba(255,215,120,0.08), transparent 40%),
+        linear-gradient(135deg, #0f0b05 0%, #1c1408 45%, #120c04 100%);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    /* Default text color for shop page */
+    color: #f5d77d;
+}
+
+/* ========== TOP NAV ========== */
+/* Fixed navigation bar at top of page */
+.top-nav {
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    /* Dark gold gradient bar */
+    background: linear-gradient(135deg, #1a1208, #2d1d0d);
+
+    padding: 14px 35px;
+
+    /* Aligns nav items left and right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 2px solid #d4af37;
+
+    /* Soft glow shadow */
+    box-shadow: 0 6px 20px rgba(212,175,55,0.25);
+
+    z-index: 1000;
+}
+
+/* NAV LINKS CONTAINER */
+/* Holds all navigation buttons in a row */
+.nav-links {
+    display: flex;
+    gap: 18px;
+}
+
+/* NAV LINKS */
+/* Styling for each navigation button */
+.nav-links a {
+
+    color: #f5d77d;
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    transition: all 0.3s ease;
+
+    /* Transparent gold-tinted background */
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(212,175,55,0.15);
+}
+
+/* NAV HOVER EFFECT */
+/* Adds glow and movement when user hovers */
+.nav-links a:hover {
+
+    background: linear-gradient(135deg, #d4af37, #f5d77d);
+    color: #1a1206;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 0 15px rgba(212,175,55,0.35);
+}
+
+/* ACTIVE PAGE LINK */
+/* Highlights current page in navigation */
+.nav-links a.active {
+
+    background: linear-gradient(135deg, #f5d77d, #c89b2c);
+    color: #1a1206;
+
+    box-shadow: 0 0 18px rgba(255,215,120,0.4);
+}
+
+/* USER INFO BOX */
+/* Displays logged-in user name or status */
+.user-info {
+
+    color: #fff0b3;
+    font-weight: bold;
+
+    background: rgba(212,175,55,0.12);
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    border: 1px solid rgba(212,175,55,0.25);
+}
+
+/* ========== MAIN CONTENT AREA ========== */
+/* Layout container for shop + records sections */
+.main-content {
+
+    margin-top: 110px;
+
+    padding: 30px;
+
+    display: flex;
+    gap: 25px;
+
+    /* Allows wrapping on smaller screens */
+    flex-wrap: wrap;
+}
+
+/* SHOP + RECORDS PANELS */
+/* Shared styling for both sections */
+.shop-section,
+.records-section {
+
+    flex: 1;
+    min-width: 320px;
+
+    background: linear-gradient(145deg, #1a140a 0%, #0f0b05 100%);
+
+    border-radius: 38px;
+
+    padding: 25px;
+
+    border: 2px solid rgba(212,175,55,0.35);
+
+    /* Glow + inner depth effect */
+    box-shadow:
+        0 0 30px rgba(212,175,55,0.15),
+        inset 0 0 12px rgba(255,215,120,0.03);
+}
+
+/* SECTION TITLES */
+/* Styles headings in shop and records */
+h2,
+h3 {
+
+    color: #fff0b3;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    letter-spacing: 1px;
+
+    font-size: 1.4em;
+
+    text-shadow: 0 0 8px rgba(255,215,120,0.2);
+}
+
+/* ITEM CARDS */
+/* Each character/product/record block */
+.character-item {
+
+    background: linear-gradient(145deg, #22180a, #120d05);
+
+    border: 1px solid rgba(212,175,55,0.35);
+
+    padding: 16px 18px;
+
+    margin-bottom: 15px;
+
+    border-radius: 22px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT FOR CARDS */
+/* Adds lift and glow when hovering over items */
+.character-item:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 0 18px rgba(212,175,55,0.18);
+
+    border-color: rgba(255,215,120,0.45);
+}
+
+/* ITEM TEXT STYLING */
+/* Title inside each card */
+.character-item strong {
+
+    display: block;
+
+    color: #fff0b3;
+
+    margin-bottom: 5px;
+
+    font-size: 1.05em;
+}
+
+/* DESCRIPTION TEXT */
+.character-item p,
+.character-item span {
+
+    color: #d6c08b;
+
+    font-size: 0.9em;
+}
+
+/* BUTTONS */
+/* Main action buttons (buy, select, etc.) */
+button {
+
+    background: linear-gradient(135deg, #f5d77d, #b8860b);
+
+    color: #1a1206;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER EFFECT */
+/* Adds scale + glow for interactivity */
+button:hover {
+
+    transform: translateY(-2px) scale(1.03);
+
+    background: linear-gradient(135deg, #fff0b3, #d4af37);
+
+    box-shadow: 0 0 18px rgba(255,215,120,0.35);
+}
+
+/* RECORDS LIST */
+/* Removes bullet points from leaderboard/history */
+.records-section ul {
+    list-style: none;
+}
+
+/* INDIVIDUAL RECORD ENTRY */
+.records-section li {
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid rgba(212,175,55,0.12);
+
+    color: #d6c08b;
+}
+
+/* RESPONSIVE DESIGN */
+/* Adjusts layout for smaller screens */
+@media (max-width: 900px) {
+
+    /* Stack sections vertically */
+    .main-content {
+        flex-direction: column;
+    }
+
+    /* Stack card content */
+    .character-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    /* Buttons become full width on mobile */
+    button {
+        width: 100%;
+    }
+}

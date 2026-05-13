@@ -1,0 +1,462 @@
+/* RESET */
+/* Removes default browser spacing and makes sizing easier to control */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Prevents users from highlighting text accidentally */
+    user-select: none;
+}
+
+/* Main page styling */
+body {
+
+    /* Creates a dark red gradient background */
+    background: linear-gradient(135deg, #1a0505 0%, #2d0a0a 50%, #1a0505 100%);
+
+    /* Sets website font style */
+    font-family: 'Courier New', 'Georgia', monospace;
+
+    /* Makes page always fill screen height */
+    min-height: 100vh;
+
+    /* Centers website content horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Adds spacing around edges */
+    padding: 20px;
+}
+
+/* ========== NAVBAR (FIXED LIKE SHOP PAGE) ========== */
+
+/* Top navigation bar styling */
+.top-nav {
+
+    /* Fire-themed gradient background */
+    background: linear-gradient(135deg, #8b0000, #cc3300, #ff4400, #cc3300);
+
+    padding: 12px 25px;
+
+    /* Places logo and links side-by-side */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Prevents navbar items from stacking vertically */
+    flex-wrap: nowrap;
+
+    /* Keeps navbar fixed at top while scrolling */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    /* Keeps navbar above all content */
+    z-index: 100;
+
+    /* Adds glowing shadow effect */
+    box-shadow: 0 5px 20px rgba(255, 68, 0, 0.4);
+
+    /* Bottom border highlight */
+    border-bottom: 3px solid #ffaa44;
+}
+
+/* NAV LINKS CONTAINER */
+
+/* Controls layout of navigation links */
+.nav-links {
+    display: flex;
+
+    /* Forces links into one row */
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    /* Space between links */
+    gap: 15px;
+    align-items: center;
+}
+
+/* LINKS */
+
+/* Individual navbar link styling */
+.nav-links a {
+
+    /* Text color */
+    color: #ffcc88;
+
+    /* Removes underline */
+    text-decoration: none;
+
+    font-weight: bold;
+
+    /* Adds button-like spacing */
+    padding: 6px 14px;
+    border-radius: 25px;
+
+    /* Transparent dark background */
+    background: rgba(0,0,0,0.3);
+
+    /* Smaller text size */
+    font-size: 0.9em;
+
+    /* Smooth hover animation */
+    transition: all 0.3s;
+
+    /* Prevents text inside button from wrapping */
+    white-space: nowrap;
+}
+
+/* Hover effect for navigation buttons */
+.nav-links a:hover {
+
+    /* Changes background color when hovered */
+    background: #ff4400;
+
+    /* Makes text white */
+    color: white;
+
+    /* Slight zoom animation */
+    transform: scale(1.05);
+}
+
+/* Active page button styling */
+.nav-links a.active {
+
+    /* Highlights current page */
+    background: #ff3300;
+    color: #ffffaa;
+
+    /* Glow effect */
+    box-shadow: 0 0 15px #ff6600;
+}
+
+/* ========== MAIN GAME CONTAINER ========== */
+
+/* Main box containing the game */
+.game-container {
+
+    /* Maximum width of game area */
+    max-width: 900px;
+
+    /* Creates space below navbar */
+    margin: 90px auto 20px auto;
+
+    padding: 20px;
+
+    /* Dark gradient background */
+    background: linear-gradient(145deg, #2a0a0a 0%, #1a0505 100%);
+
+    /* Rounded corners */
+    border-radius: 35px;
+
+    /* Orange border */
+    border: 2px solid #ff4400;
+
+    /* Outer glowing effect */
+    box-shadow: 0 0 40px rgba(255, 68, 0, 0.3);
+}
+
+/* HEADER */
+
+/* Centers title section */
+.game-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Main game title */
+.game-header h1 {
+
+    /* Orange glowing text */
+    color: #ff8844;
+    text-shadow: 0 0 10px #ff4400;
+
+    /* Large title size */
+    font-size: 1.6em;
+}
+
+/* Subtitle styling */
+.game-header h2 {
+    color: #ff6644;
+    font-size: 1em;
+}
+
+/* STATS */
+
+/* Layout for stats cards */
+.stats-panel {
+
+    /* Places cards side-by-side */
+    display: flex;
+    justify-content: space-around;
+
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* Individual stat box */
+.stat-card {
+
+    /* Dark panel background */
+    background: linear-gradient(145deg, #2a0a0a, #1a0505);
+
+    padding: 10px 12px;
+
+    /* Rounded corners */
+    border-radius: 20px;
+
+    text-align: center;
+
+    /* Orange border */
+    border: 1px solid #ff6600;
+
+    /* Makes cards equal width */
+    flex: 1;
+}
+
+/* Small label text inside stat card */
+.stat-label {
+    display: block;
+    color: #ffaa77;
+    font-size: 0.7em;
+
+    /* Adds spacing between letters */
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
+}
+
+/* Large stat number display */
+.stat-value {
+    display: block;
+
+    color: #ff8844;
+    font-size: 1.8em;
+    font-weight: bold;
+
+    /* Glow effect */
+    text-shadow: 0 0 5px #ff4400;
+}
+
+/* Small hot/cold indicator */
+.hot-cold-mini {
+    margin-top: 8px;
+
+    font-size: 0.7em;
+    color: #ffaa55;
+
+    /* Transparent background */
+    background: rgba(255, 68, 0, 0.3);
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* HEARTS */
+
+/* Displays player lives/hearts */
+.hearts-visual {
+    text-align: center;
+
+    /* Large heart icons */
+    font-size: 1.5em;
+
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+
+    padding: 6px;
+
+    /* Dark panel background */
+    background: linear-gradient(145deg, #1a0505, #0d0202);
+
+    border-radius: 40px;
+
+    border: 1px solid #ff4400;
+}
+
+/* CANVAS */
+
+/* Container around game canvas */
+.canvas-wrapper {
+
+    /* Centers canvas */
+    display: flex;
+    justify-content: center;
+
+    margin: 10px 0;
+
+    background: #0a0202;
+
+    border-radius: 20px;
+    padding: 8px;
+
+    border: 2px solid #ff4400;
+}
+
+/* Actual game canvas */
+#gameCanvas {
+
+    /* Rounded game area */
+    border-radius: 12px;
+
+    /* Cursor changes to pointer */
+    cursor: pointer;
+
+    display: block;
+
+    background: #0a0202;
+
+    /* Makes canvas responsive */
+    width: 100%;
+}
+
+/* STATUS */
+
+/* Area showing game messages */
+.status-area {
+
+    /* Dark panel background */
+    background: linear-gradient(145deg, #1a0505, #0d0202);
+
+    border-radius: 25px;
+
+    padding: 10px 15px;
+
+    margin: 12px 0 8px 0;
+
+    /* Orange side highlight */
+    border-left: 5px solid #ff6600;
+}
+
+/* Main status text */
+.status-message {
+    font-family: monospace;
+
+    font-size: 0.85em;
+    color: #ffaa77;
+
+    font-weight: bold;
+    text-align: center;
+
+    margin-bottom: 5px;
+}
+
+/* Additional status details */
+.status-detail {
+    text-align: center;
+
+    color: #ff8866;
+
+    font-size: 0.75em;
+
+    padding: 5px;
+
+    /* Transparent background */
+    background: rgba(255, 68, 0, 0.1);
+
+    border-radius: 15px;
+}
+
+/* BUTTONS */
+
+/* Layout for button section */
+.button-panel {
+
+    display: flex;
+
+    gap: 12px;
+
+    justify-content: center;
+
+    margin-top: 10px;
+}
+
+/* Main fire-themed buttons */
+.btn-fire {
+
+    /* Fire gradient effect */
+    background: linear-gradient(135deg, #ff4400, #aa2200);
+
+    color: #ffffcc;
+
+    border: none;
+
+    padding: 8px 20px;
+
+    border-radius: 35px;
+
+    font-weight: bold;
+    font-size: 0.85em;
+
+    /* Shows clickable cursor */
+    cursor: pointer;
+
+    /* Smooth animations */
+    transition: all 0.3s;
+}
+
+/* Button hover animation */
+.btn-fire:hover {
+
+    /* Slight zoom effect */
+    transform: scale(1.05);
+
+    /* Brighter gradient */
+    background: linear-gradient(135deg, #ff6611, #cc3300);
+
+    /* Glow effect */
+    box-shadow: 0 0 15px #ff6600;
+}
+
+/* MODAL */
+
+/* Popup overlay styling */
+.modal {
+
+    /* Hidden by default */
+    display: none;
+
+    /* Covers entire screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* Dark transparent background */
+    background: rgba(0,0,0,0.9);
+
+    /* Centers modal content */
+    justify-content: center;
+    align-items: center;
+
+    /* Appears above everything */
+    z-index: 1000;
+}
+
+/* RESPONSIVE */
+
+/* Mobile screen adjustments */
+@media (max-width: 800px) {
+
+    /* Smaller body padding on mobile */
+    body {
+        padding: 10px;
+    }
+
+    /* Keeps navbar horizontal on mobile */
+    .top-nav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    /* Stacks stat cards vertically on small screens */
+    .stats-panel {
+        flex-direction: column;
+    }
+}

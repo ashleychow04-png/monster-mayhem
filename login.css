@@ -1,0 +1,342 @@
+/* RESET */
+/* Removes default spacing and ensures consistent box sizing across elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Prevents text selection for a game-like UI feel */
+    user-select: none;
+}
+
+/* MAIN PAGE STYLING */
+body {
+
+    /* Ensures page fills full screen height */
+    min-height: 100vh;
+
+    /* Dark gold-themed gradient background */
+    background: linear-gradient(135deg, #1a1a0f 0%, #2a2a1a 50%, #1a1a0f 100%);
+
+    /* Classic serif font for elegant UI style */
+    font-family: 'Georgia', serif;
+
+    /* Centers main content horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Needed for glowing background effect positioning */
+    position: relative;
+}
+
+/* GOLD GLOW BACKGROUND EFFECT */
+/* Adds animated ambient lighting behind everything */
+body::before {
+
+    content: '';
+
+    /* Covers full screen */
+    position: fixed;
+    inset: 0;
+
+    /* Prevents blocking clicks */
+    pointer-events: none;
+
+    /* Gold glowing light spots */
+    background:
+        radial-gradient(circle at 20% 40%, rgba(255,215,0,0.05), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255,215,0,0.08), transparent 60%);
+
+    /* Subtle animation effect */
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Glow animation */
+@keyframes shimmer {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* ================= NAV BAR ================= */
+
+/* Fixed top navigation bar */
+.top-nav {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    /* Dark gold-themed background */
+    background: linear-gradient(145deg, #2a2418, #1f1b12);
+
+    padding: 14px 30px;
+
+    /* Aligns items left/right */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* Gold bottom border */
+    border-bottom: 2px solid #ffd700;
+
+    z-index: 100;
+
+    /* Soft glow shadow */
+    box-shadow: 0 6px 20px rgba(212,175,55,0.25);
+
+    /* Prevents items wrapping onto new line */
+    flex-wrap: nowrap;
+}
+
+/* NAV LINKS CONTAINER */
+.nav-links {
+
+    display: flex;
+    gap: 20px;
+
+    /* Forces single row layout */
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    align-items: center;
+}
+
+/* NAV LINKS */
+.nav-links a {
+
+    /* Gold-tinted text */
+    color: #f5deb3;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    /* Smooth hover animation */
+    transition: all 0.35s ease;
+
+    /* Slight transparent background */
+    background: rgba(255,255,255,0.04);
+
+    /* Subtle border */
+    border: 1px solid rgba(212,175,55,0.2);
+
+    /* Prevents text wrapping inside buttons */
+    white-space: nowrap;
+}
+
+/* NAV HOVER EFFECT */
+.nav-links a:hover {
+
+    /* Gold glow effect */
+    background: linear-gradient(135deg, #d4af37, #f5d77d);
+
+    color: #1b1205;
+
+    /* Lift effect */
+    transform: translateY(-2px);
+
+    /* Glow shadow */
+    box-shadow: 0 0 18px rgba(212,175,55,0.45);
+}
+
+/* ACTIVE PAGE LINK */
+.nav-links a.active {
+
+    /* Strong gold highlight */
+    background: linear-gradient(135deg, #f4c95d, #c89b2c);
+
+    color: #1a1206;
+
+    /* Strong glow */
+    box-shadow: 0 0 20px rgba(255,215,120,0.5);
+}
+
+/* USER INFO DISPLAY */
+.user-info {
+
+    /* Gold text */
+    color: #f8e7b0;
+
+    font-weight: bold;
+
+    /* Soft gold background */
+    background: rgba(212,175,55,0.12);
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    /* Subtle border */
+    border: 1px solid rgba(212,175,55,0.25);
+}
+
+/* ================= LOGIN BOX ================= */
+
+/* Main login container box */
+.login-container {
+
+    background: linear-gradient(145deg, #2a2418, #1f1b12);
+
+    border-radius: 40px;
+
+    padding: 40px;
+
+    /* Soft gold border */
+    border: 1px solid rgba(255,215,0,0.3);
+
+    /* Shadow depth effect */
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.5),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+
+    width: 420px;
+
+    /* Pushes login box below navbar */
+    margin-top: 90px;
+}
+
+/* MAIN TITLE */
+h1 {
+
+    text-align: center;
+
+    font-size: 2.2em;
+
+    font-weight: bold;
+
+    /* Gold gradient text effect */
+    background: linear-gradient(135deg, #ffd700, #ffed4e, #ffb347);
+
+    -webkit-background-clip: text;
+    color: transparent;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+/* INPUT FIELDS */
+input {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin: 10px 0;
+
+    background: #1a1610;
+
+    border: 1px solid rgba(255,215,0,0.3);
+
+    border-radius: 30px;
+
+    color: #ffed9e;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+/* INPUT FOCUS EFFECT */
+input:focus {
+
+    border-color: #ffd700;
+
+    /* Glow effect when typing */
+    box-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+/* BUTTONS */
+button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 15px;
+
+    /* Gold button gradient */
+    background: linear-gradient(145deg, #ffd700, #daa520);
+
+    border: none;
+
+    border-radius: 40px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: #1a1a0f;
+
+    transition: 0.3s;
+}
+
+/* BUTTON HOVER EFFECT */
+button:hover {
+
+    transform: translateY(-2px);
+
+    /* Adds glow shadow */
+    box-shadow: 0 6px 15px rgba(255,215,0,0.3);
+}
+
+/* SWITCH LOGIN/SIGNUP TEXT */
+.switch-mode {
+
+    text-align: center;
+
+    margin-top: 18px;
+
+    color: #daa520;
+
+    cursor: pointer;
+}
+
+/* HOVER FOR SWITCH TEXT */
+.switch-mode:hover {
+    color: #ffd700;
+}
+
+/* ERROR MESSAGE */
+.error {
+
+    color: #ff9900;
+
+    text-align: center;
+
+    margin-top: 10px;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Adjusts layout for smaller screens */
+@media (max-width: 800px) {
+
+    /* Prevent navbar wrapping */
+    .top-nav {
+        flex-wrap: nowrap;
+    }
+
+    /* Reduces spacing between links */
+    .nav-links {
+        gap: 10px;
+    }
+
+    /* Smaller buttons for mobile */
+    .nav-links a {
+        padding: 8px 12px;
+        font-size: 0.8em;
+    }
+
+    /* Login box becomes responsive */
+    .login-container {
+        width: 90%;
+    }
+}

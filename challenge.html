@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<!-- Declares HTML5 document type -->
+<html lang="en">
+
+<head>
+
+    <!-- Sets website character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes website responsive on phones/tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Website title shown in browser tab -->
+    <title>Monster Mayhem - FIRE SURVIVAL MODE | 10 Hearts</title>
+
+    <!-- Links external CSS stylesheet -->
+    <link rel="stylesheet" href="challenge.css">
+
+</head>
+
+<body>
+
+<!-- TOP NAV -->
+
+<!-- Navigation bar shown at top of page -->
+<div class="top-nav">
+    <div class="nav-links">
+        <a href="login.html">👤 Log out </a>
+        <a href="index.html">🎮 Classic Game</a>
+        <a href="challange.html" class="active">
+            ⚡ Survival Mode
+        </a>
+        <a href="shop.html">🪙 Shop </a>
+
+    </div>
+
+</div>
+
+<!-- MAIN GAME CONTAINER -containing the whole game -->
+<div class="game-container">
+
+    <!-- HEADER - Game title section -->
+    <div class="game-header">
+        <!-- Main game title -->
+        <h1>👾 MONSTER MAYHEM</h1>
+        <!-- Game mode subtitle -->
+        <h2>❤️‍🔥 SURVIVAL MODE - 10 HEARTS ❤️‍🔥</h2>
+
+    </div>
+
+    <!-- STATS -->
+    <!-- Panel showing game statistics -->
+    <div class="stats-panel">
+
+        <!-- Hearts/lives card -->
+        <div class="stat-card">
+
+            <!-- Label text -->
+            <div class="stat-label">❤️‍🔥 HEARTS</div>
+
+            <!-- Dynamic hearts counter updated with JavaScript -->
+            <div class="stat-value" id="heartsCount">10</div>
+
+            <!-- Displays hot/cold distance hints -->
+            <div class="hot-cold-mini" id="hotColdMini">
+                📍 DISTANCE: ?
+            </div>
+
+        </div>
+
+        <!-- Treasure status card -->
+        <div class="stat-card">
+
+            <!-- Label -->
+            <div class="stat-label">💎 TREASURE</div>
+
+            <!-- Shows treasure state (hidden/found) -->
+            <div class="stat-value" id="treasureStatus">
+                ❓ HIDDEN
+            </div>
+
+        </div>
+
+        <!-- Explored hex count card -->
+        <div class="stat-card">
+
+            <!-- Label -->
+            <div class="stat-label">🗺️ EXPLORED</div>
+
+            <!-- Displays number of explored spaces -->
+            <div class="stat-value" id="exploredCount">1</div>
+
+        </div>
+
+    </div>
+
+    <!-- HEARTS -->
+
+    <!-- Visual display of remaining player hearts -->
+    <div class="hearts-visual" id="heartsVisual">
+
+        <!-- Starting 10 hearts -->
+        ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️ ❤️
+
+    </div>
+
+    <!-- CANVAS -->
+
+    <!-- Container for game canvas -->
+    <div class="canvas-wrapper">
+
+        <!-- Main game drawing area controlled by JavaScript -->
+        <canvas id="gameCanvas" width="750" height="550"></canvas>
+
+    </div>
+
+    <!-- STATUS -->
+
+    <!-- Area displaying game messages and hints -->
+    <div class="status-area">
+
+        <!-- Main game status message -->
+        <div class="status-message" id="statusMsg">
+
+            🔥 SURVIVAL MODE ACTIVE
+
+        </div>
+
+        <!-- Detailed instructions/status -->
+        <div class="status-detail" id="statusDetail">
+
+            ⚠️ EVERY MOVE = -1 HEART!
+            Find hidden treasure before hearts run out!
+
+        </div>
+
+    </div>
+
+    <!-- BUTTONS -->
+
+    <!-- Button controls section -->
+    <div class="button-panel">
+
+        <!-- Button to remove selected hex -->
+        <button class="btn-fire" id="deselectBtn">
+
+            ⭐ DESELECT HEX
+
+        </button>
+
+        <!-- Button to restart/reset the game -->
+        <button class="btn-fire" id="resetBtn">
+
+            🔄 RESET GAME
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- RULES MODAL -->
+
+<!-- Popup window showing survival mode rules -->
+<div id="rulesModal" class="modal">
+
+    <!-- Modal content container -->
+    <div class="modal-content">
+
+        <!-- Modal title/header -->
+        <div class="modal-header">
+
+            🔥 SURVIVAL MODE RULES 🔥
+
+        </div>
+
+        <!-- Modal body containing rules -->
+        <div class="modal-body">
+
+            <!-- Rules list -->
+            <ul>
+
+                <!-- Rule about starting hearts -->
+                <li>
+                    ❤️‍🔥 Start with
+                    <strong>10 HEARTS</strong>
+                </li>
+
+                <!-- Rule explaining heart loss -->
+                <li>
+                    💀 <strong>EVERY MOVE</strong>
+                    costs
+                    <strong style="color:#ff0000">
+                        -1 HEART
+                    </strong>
+                </li>
+
+                <!-- Rule about winning -->
+                <li>
+                    💎 Find the
+                    <strong>HIDDEN TREASURE</strong>
+                    to WIN
+                </li>
+
+                <!-- Rule about hints -->
+                <li>
+                    🔥 <strong>HOT/COLD</strong>
+                    hints tell you treasure distance
+                </li>
+
+                <!-- Rule about valid moves -->
+                <li>
+                    🟠 Only
+                    <strong>BRIGHT ORANGE hexes</strong>
+                    are valid moves
+                </li>
+
+                <!-- Rule about losing -->
+                <li>
+                    💀 Game OVER when hearts reach 0
+                </li>
+
+                <!-- Rule about total moves -->
+                <li>
+                    🏆 You have 10 moves total.
+                    Make them count!
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- Modal footer buttons -->
+        <div class="modal-footer">
+
+            <!-- Button to close rules popup -->
+            <button class="btn-fire" id="closeModalBtn">
+
+                GOT IT!
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Links external JavaScript game logic -->
+<script src="challenge.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Mayhem - Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="top-nav">
+     <!--Navigate to different pages -->
+    <div class="nav-links">
+        <a href="login.html" class="active">👤 Profile</a>
+        <a href="index.html">🎮 Classic Game</a>
+        <a href="challenge.html">⚡ Survival Mode</a>
+        <a href="shop.html">🪙 Shop</a>
+    </div>
+
+    <div class="user-info">
+        Welcome Player
+    </div>
+
+</div>
+
+<!-- LOGIN BOX -->
+<div class="login-container">
+
+    <h1>MONSTER MAYHEM</h1>
+
+    <!-- LOGIN -->
+    <div id="loginForm">
+        <!--Where user can enter their details: name and password-->
+        <input type="text" id="username" placeholder="Username">
+
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <div class="switch-mode" onclick="showSignup()">
+            Don't have an account? Sign up
+        </div>
+
+    </div>
+
+    <!-- SIGNUP -->
+    <div id="signupForm" style="display:none">
+        <!--For user that doesn't have an account-->
+        <input type="text" id="newUsername" placeholder="Username">
+
+        <input type="password" id="newPassword" placeholder="Password">
+
+        <button onclick="signup()">Sign Up</button>
+
+        <div class="switch-mode" onclick="showLogin()">
+            Back to Login
+        </div>
+
+    </div>
+
+    <!-- ERROR MESSAGE -->
+    <div id="message" class="error"></div>
+
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>
