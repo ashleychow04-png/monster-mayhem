@@ -1,6 +1,4 @@
-// MONSTER MAYHEM - FIRE SURVIVAL MODE
-// EVERY MOVE = -1 HEART! Treasure is HIDDEN!
-
+// MONSTER MAYHEM - FIRE SURVIVAL MODE() EVERY MOVE = -1 HEART! Treasure is HIDDEN!)
 (function() {
     let canvas, ctx;
     let GRID_W = 10, GRID_H = 10;
